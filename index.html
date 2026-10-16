@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitán Sub | El Mar del Hambre Tiene Capitán</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --green-deep: #0E4D45;
+            --green-dark: #09342E;
+            --red-brand: #9E1B1B;
+            --aqua-accent: #88E0D0;
+            --cream-bg: #F4F7F6;
+            --dark-text: #191919;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--cream-bg); color: var(--dark-text); line-height: 1.6; }
+        
+        /* Header */
+        header { background-color: var(--green-deep); color: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 4px solid var(--red-brand); }
+        .logo { font-family: 'Knewave', cursive; font-size: 1.8rem; color: var(--aqua-accent); letter-spacing: 1px; }
+        nav a { color: var(--white); text-decoration: none; margin-left: 1.5rem; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--aqua-accent); }
+        .btn-order { background-color: var(--red-brand); padding: 0.5rem 1.2rem; border-radius: 50px; color: var(--white); }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--green-dark), var(--green-deep)); color: var(--white); text-align: center; padding: 5rem 1rem; border-bottom: 6px solid var(--aqua-accent); }
+        .hero h1 { font-family: 'Knewave', cursive; font-size: 3.5rem; color: var(--aqua-accent); margin-bottom: 1rem; text-shadow: 2px 2px 0px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto; color: var(--cream-bg); }
+        .btn-hero { background-color: var(--red-brand); color: var(--white); padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 800; border-radius: 50px; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; }
+        .btn-hero:hover { transform: scale(1.05); }
+
+        /* Sections */
+        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Knewave', cursive; font-size: 2.5rem; text-align: center; color: var(--green-deep); margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 3rem; font-weight: 600; }
+
+        /* Menu Grid */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .menu-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--red-brand); transition: transform 0.3s; }
+        .menu-card:hover { transform: translateY(-5px); }
+        .menu-card-body { padding: 1.5rem; }
+        .menu-card h3 { font-size: 1.3rem; color: var(--green-deep); margin-bottom: 0.5rem; font-weight: 800; }
+        .menu-card p { font-size: 0.95rem; color: #555; margin-bottom: 1rem; }
+        .price { font-size: 1.2rem; font-weight: 800; color: var(--red-brand); }
+
+        /* Features / Experience */
+        .features { background-color: var(--white); padding: 4rem 2rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .feature-box { text-align: center; padding: 2rem; border-radius: 8px; background: var(--cream-bg); border: 1px solid #e0e0e0; }
+        .feature-box i { font-size: 2.5rem; color: var(--green-deep); margin-bottom: 1rem; }
+        .feature-box h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--dark-text); font-weight: 800; }
+
+        /* Footer */
+        footer { background-color: var(--green-dark); color: var(--white); text-align: center; padding: 3rem 2rem; border-top: 5px solid var(--aqua-accent); }
+        footer p { margin-bottom: 1rem; color: var(--aqua-accent); font-weight: 600; }
+        .coordinates { font-size: 0.9rem; opacity: 0.8; }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Capitán Sub</div>
+        <nav>
+            <a href="#menu">Menú</a>
+            <a href="#nosotros">El Concepto</a>
+            <a href="#bitacora">Bitácora</a>
+            <a href="#contacto" class="btn-order">¡Pídete un Sub!</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>PAN TOSTADO, SABOR DESATADO</h1>
+        <p>En el mar del hambre, el Capitán Sub marca el rumbo. Subs contundentes, ingredientes frescos y un crew que te acompaña a donde te lleve el apetito.</p>
+        <a href="#menu" class="btn-hero">Explorar el Menú</a>
+    </section>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-bolt"></i>
+                <h4>Autoservicio Rápido</h4>
+                <p>Pide sin filas desde tu móvil o nuestras tablets y retira en menos de 3 minutos.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-bread-slice"></i>
+                <h4>Pan Dorado al Instante</h4>
+                <p>Textura crujiente por fuera y suave por dentro, diseñado para aguantar todo.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-anchor"></i>
+                <h4>The Flavor Crew</h4>
+                <p>Ingredientes de primera y nuestra inconfundible salsa propietaria del Capitán.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">NUESTRO MENÚ</h2>
+        <p class="section-subtitle">El balance perfecto entre los clásicos del mundo y el toque del Capitán</p>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Crew Resuelve (Plan B)</h3>
+                    <p>Subs sencillos, directos y sabrosos pensados para resolver tu almuerzo diario de forma rápida y económica.</p>
+                    <div class="price">$5.50 USD</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Clásicos del Capitán</h3>
+                    <p>Italian Sub, Sub Americano, BLT y Pollo BBQ con el twist inconfundible de la casa.</p>
+                    <div class="price">$8.00 USD</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Especiales & Sub del Mes</h3>
+                    <p>Creaciones de autor como el Italianísimo y nuestro Sub rotativo mensual de edición limitada.</p>
+                    <div class="price">$9.50 USD</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Mini Capitanes (Cofre Feliz)</h3>
+                    <p>Menú infantil con sub de pollo/carne, papitas, jugo, mantel de laberinto y sombrero marinero.</p>
+                    <div class="price">$6.00 USD</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Pack Familiar "La Flota"</h3>
+                    <p>4 Subs principales, ración familiar de snacks y bebida grande de 1.5L para compartir.</p>
+                    <div class="price">$19.50 USD</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-card-body">
+                    <h3>Salsas & Product Line</h3>
+                    <p>Llévate a casa nuestra famosa "Salsa del Capitán" envasada, gorras, franelas y vasos reutilizables.</p>
+                    <div class="price">Desde $4.00 USD</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Section -->
+    <section id="bitacora" style="background: var(--white); border-radius: 12px; margin: 4rem auto; max-width: 1000px; padding: 3rem;">
+        <h2 class="section-title" style="text-align: left;">La Bitácora del Capitán</h2>
+        <p style="margin-bottom: 1.5rem; color: #555;">Nuestra tarjeta de lealtad premia tu constancia. Colecciona sellos en cada visita a nuestro kiosko: al <strong>llenar 9 espacios, tu 10mo Sub es totalmente de cortesía</strong>. Además, desbloquea insignias exclusivas del Flavor Crew y participa por ser nuestro Cliente del Año.</p>
+        <a href="#contacto" class="btn-hero" style="background: var(--green-deep);">¡Consigue tu Bitácora!</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="logo" style="margin-bottom: 1rem; color: var(--aqua-accent);">Capitán Sub</div>
+        <p>¡Hambre a la vista! Pídenos también a través de Yummy, QUIK y PedidosYa.</p>
+        <p class="coordinates"><i class="fa-solid fa-location-dot"></i> 10°65'N 71°64'O • Maracaibo, Venezuela</p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.6;">© 2026 Capitán Sub. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
